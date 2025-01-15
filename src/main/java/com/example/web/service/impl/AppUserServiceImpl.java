@@ -109,7 +109,7 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
     public AppUserDto CreateOrEdit(AppUserDto input) {
 
         if(Extension.isNullOrEmpty(input.getUserName())){
-            throw  new CustomException("用户名不能为空");
+            throw  new CustomException("Username cannot be empty");
         }
 
         AppUser appUser=input.MapToEntity();
@@ -173,7 +173,7 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
         {
             Long selectCount = WarehouseRelativeUserMapper.selectCount(Wrappers.<WarehouseRelativeUser>lambdaQuery().eq(WarehouseRelativeUser::getUserId, user.getId()));
             if(selectCount==0){
-                throw new CustomException("The user has not yet bound a warehouse");
+                throw new CustomException("The user has not yet bound a organize");
             }
         }
 
@@ -206,7 +206,7 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
         Long phoneCount = AppUserMpper.selectCount(Wrappers.<AppUser>lambdaQuery()
                 .eq(Extension.isNotNullOrEmpty(input.getPhoneNumber()), AppUser::getPhoneNumber, input.getPhoneNumber()));
         if (phoneCount > 0) {
-            throw new CustomException("该手机号已经存在!");
+            throw new CustomException("Этот номер телефона уже существует!");
         }
         String hashedPassword = BCrypt.hashpw(input.getPassword(), BCrypt.gensalt());
         input.setPassword(hashedPassword);

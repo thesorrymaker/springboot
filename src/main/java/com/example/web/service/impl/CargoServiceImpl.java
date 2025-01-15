@@ -16,6 +16,7 @@ import com.example.web.tools.dto.*;
 import com.example.web.tools.exception.CustomException;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.InvocationTargetException;
@@ -36,6 +37,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -178,7 +180,7 @@ public class CargoServiceImpl extends ServiceImpl<CargoMapper, Cargo> implements
                 .eq(Cargo::getWarehouseId, input.getWarehouseId())
                 .eq(Cargo::getCustomerId, input.getCustomerId()));
         if(sameCount>0){
-            throw  new CustomException("当前仓库下的当前货主存在相同的Price了,请检查是否正确");
+            throw  new CustomException("The current owner of the current warehouse has the same Price, please check whether it is correct");
         }
         //声明一个商品实体
         Cargo Cargo = input.MapToEntity();
@@ -207,6 +209,14 @@ public class CargoServiceImpl extends ServiceImpl<CargoMapper, Cargo> implements
             idInput.setId(id);
             Delete(idInput);
         }
+    }
+
+    /**
+     * 获取 Rating 的平均值
+     */
+    @Override
+    public Double GetAverageRating() {
+        return CargoMapper.getAverageRating();
     }
 
 }

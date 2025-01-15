@@ -29,6 +29,8 @@ public class AppUserController {
 
     /**
      * 用户分页查询接口
+     * 包含分页信息和查询结果
+     * 分页结果，包含用户数据列表
      */
     @RequestMapping(value = "/List", method = RequestMethod.POST)
     @SneakyThrows
@@ -80,7 +82,7 @@ public class AppUserController {
     public ResponseData<String> SignIn(@RequestBody AppUserDto input, HttpServletRequest request)
     {
         String token= AppUserService.SignIn(input);
-        return ResponseData.GetResponseDataInstance(token,"登录成功",true);
+        return ResponseData.GetResponseDataInstance(token,"Login successful",true);
     }
 
     /**

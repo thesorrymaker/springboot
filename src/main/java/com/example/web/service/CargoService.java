@@ -37,5 +37,5 @@ public interface CargoService extends IService<Cargo> {
      */
     public void BatchDelete(IdsInput input);
 
-
+    public Double GetAverageRating();
 }

@@ -36,6 +36,6 @@ public interface CustomerService extends IService<Customer> {
      * 货主批量删除
      */
     public void BatchDelete(IdsInput input);
-  
+
 
 }

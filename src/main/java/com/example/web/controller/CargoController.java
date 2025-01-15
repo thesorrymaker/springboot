@@ -5,6 +5,7 @@ import com.example.web.dto.query.*;
 import com.example.web.entity.*;
 import com.example.web.mapper.*;
 import com.example.web.service.*;
+import com.example.web.service.impl.CargoServiceImpl;
 import com.example.web.tools.dto.*;
 import com.example.web.tools.exception.CustomException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import lombok.SneakyThrows;
@@ -35,6 +37,9 @@ public class CargoController {
     private  CargoService CargoService;
     @Autowired()
     private CargoMapper CargoMapper;
+    @Autowired
+    private CargoServiceImpl cargoService;
+
     /**
      * 商品分页查询
      */
@@ -77,7 +82,11 @@ public class CargoController {
     {
         CargoService.BatchDelete(input);
     }
-  
 
- 
+
+    @GetMapping("/average-rating")
+    public ResponseEntity<Double> getAverageRating() {
+        Double avgRating = cargoService.GetAverageRating();
+        return ResponseEntity.ok(avgRating);
+    }
 }
