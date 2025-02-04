@@ -21,11 +21,11 @@ import com.baomidou.mybatisplus.annotation.FieldStrategy;
  * 商品分类表
  */
 @Data
-@TableName("`CargoType`")
+@TableName("CargoType")
 public class CargoType extends BaseEntity {
 
-      
-  	  /**
+
+    /**
      * 名称
      */  
     @JsonProperty("Name")

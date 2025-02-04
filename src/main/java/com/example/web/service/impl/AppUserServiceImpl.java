@@ -81,10 +81,8 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
         }
 
 
-
-
         //按创建时间从大到小排序 最新的显示在最前面
-        queryWrapper = queryWrapper.orderByDesc(AppUser::getCreationTime);
+        //queryWrapper = queryWrapper.(AppUser::getCreationTime);
         //构建一个分页查询的model
         Page<AppUser> page = new Page<>(input.getPage(), input.getLimit());
 
@@ -99,6 +97,7 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
 
         //返回一个分页结构给前端
         return PagedResult.GetInstance(items, totalCount);
+
     }
 
     /**

@@ -102,7 +102,7 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
         LambdaQueryWrapper<Customer> queryWrapper = BuilderQuery(input);
        
         //按创建时间从大到小排序 最新的显示在最前面
-        queryWrapper=queryWrapper.orderByDesc(Customer::getCreationTime);
+        //queryWrapper=queryWrapper.orderByDesc(Customer::getCreationTime);
         //构建一个分页查询的model
         Page<Customer> page = new Page<>(input.getPage(), input.getLimit());
          //从数据库进行分页查询获取货主数据

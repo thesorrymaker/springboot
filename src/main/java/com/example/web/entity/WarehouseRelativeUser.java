@@ -21,7 +21,7 @@ import com.baomidou.mybatisplus.annotation.FieldStrategy;
  * 仓库用户表
  */
 @Data
-@TableName("`WarehouseRelativeUser`")
+@TableName("WarehouseRelativeUser")
 public class WarehouseRelativeUser extends BaseEntity {
 
       

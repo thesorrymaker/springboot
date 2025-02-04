@@ -9,6 +9,4 @@ import org.apache.ibatis.annotations.Select;
  */
 @Mapper
 public interface CargoMapper  extends BaseMapper<Cargo> {
-    @Select("SELECT AVG(CAST(rating AS DECIMAL(10,2))) FROM cargo WHERE rating IS NOT NULL")
-    Double getAverageRating();
 }

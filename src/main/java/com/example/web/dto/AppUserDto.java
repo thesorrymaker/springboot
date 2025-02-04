@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @Data
 public class AppUserDto extends BaseDto
 {
-
     /**
      * 账号
      */

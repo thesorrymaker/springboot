@@ -136,7 +136,7 @@ public class CargoServiceImpl extends ServiceImpl<CargoMapper, Cargo> implements
         LambdaQueryWrapper<Cargo> queryWrapper = BuilderQuery(input);
 
         //按创建时间从大到小排序 最新的显示在最前面
-        queryWrapper = queryWrapper.orderByDesc(Cargo::getCreationTime);
+        //queryWrapper = queryWrapper.orderByDesc(Cargo::getCreationTime);
         //构建一个分页查询的model
         Page<Cargo> page = new Page<>(input.getPage(), input.getLimit());
         //从数据库进行分页查询获取商品数据
@@ -211,12 +211,6 @@ public class CargoServiceImpl extends ServiceImpl<CargoMapper, Cargo> implements
         }
     }
 
-    /**
-     * 获取 Rating 的平均值
-     */
-    @Override
-    public Double GetAverageRating() {
-        return CargoMapper.getAverageRating();
-    }
+
 
 }

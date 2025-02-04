@@ -100,7 +100,7 @@ public class WarehouseServiceImpl extends ServiceImpl<WarehouseMapper, Warehouse
         LambdaQueryWrapper<Warehouse> queryWrapper = BuilderQuery(input);
        
         //按创建时间从大到小排序 最新的显示在最前面
-        queryWrapper=queryWrapper.orderByDesc(Warehouse::getCreationTime);
+        //queryWrapper=queryWrapper.orderByDesc(Warehouse::getCreationTime);
         //构建一个分页查询的model
         Page<Warehouse> page = new Page<>(input.getPage(), input.getLimit());
          //从数据库进行分页查询获取仓库数据

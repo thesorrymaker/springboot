@@ -90,7 +90,7 @@ public class CargoTypeServiceImpl extends ServiceImpl<CargoTypeMapper, CargoType
         LambdaQueryWrapper<CargoType> queryWrapper = BuilderQuery(input);
        
         //按创建时间从大到小排序 最新的显示在最前面
-        queryWrapper=queryWrapper.orderByDesc(CargoType::getCreationTime);
+        //queryWrapper=queryWrapper.orderByDesc(CargoType::getCreationTime);
         //构建一个分页查询的model
         Page<CargoType> page = new Page<>(input.getPage(), input.getLimit());
          //从数据库进行分页查询获取商品分类数据

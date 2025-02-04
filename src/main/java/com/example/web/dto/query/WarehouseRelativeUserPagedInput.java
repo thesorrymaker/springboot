@@ -19,7 +19,7 @@ public class WarehouseRelativeUserPagedInput extends PagedInput {
     /**
      * Id主键
      */
-    @JsonProperty("Id")
+    @JsonProperty("id")
     private Integer Id;
      /**
      * 用户

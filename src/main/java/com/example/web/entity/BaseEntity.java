@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @Data
 public class BaseEntity {
 
-    @TableId(value = "Id", type = IdType.AUTO)
-    private Integer Id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
     @JsonSerialize(using= LocalDateTimeSerializer.class)
     @JsonDeserialize(using= LocalDateTimeDeserializer.class)

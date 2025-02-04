@@ -21,7 +21,7 @@ import com.baomidou.mybatisplus.annotation.FieldStrategy;
  * 货主表
  */
 @Data
-@TableName("`Customer`")
+@TableName("Customer")
 public class Customer extends BaseEntity {
 
       

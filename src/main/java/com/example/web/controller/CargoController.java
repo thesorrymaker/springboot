@@ -84,9 +84,4 @@ public class CargoController {
     }
 
 
-    @GetMapping("/average-rating")
-    public ResponseEntity<Double> getAverageRating() {
-        Double avgRating = cargoService.GetAverageRating();
-        return ResponseEntity.ok(avgRating);
-    }
 }
