@@ -1,0 +1,422 @@
+<mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" background="none" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="node48" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AppUser&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getEmail(): String&lt;br/&gt;+ getUserName(): String&lt;br/&gt;+ getPassword(): String&lt;br/&gt;+ toString(): String&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ setBirth(LocalDateTime): void&lt;br/&gt;+ setRoleType(Integer): void&lt;br/&gt;+ getImageUrls(): String&lt;br/&gt;+ getName(): String&lt;br/&gt;+ getPhoneNumber(): String&lt;br/&gt;+ getBirth(): LocalDateTime&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ setPhoneNumber(String): void&lt;br/&gt;+ getRoleType(): Integer&lt;br/&gt;+ setName(String): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setEmail(String): void&lt;br/&gt;+ setUserName(String): void&lt;br/&gt;+ setPassword(String): void&lt;br/&gt;+ setImageUrls(String): void&lt;br/&gt;+ MapToDto(): AppUserDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1152" y="3884" width="222" height="543" as="geometry" />
+    </mxCell>
+    <mxCell id="node2" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AppUserController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ GetByToken(String): AppUserDto&lt;br/&gt;+ Register(AppUserDto): AppUserDto&lt;br/&gt;+ Export(String, HttpServletResponse): void&lt;br/&gt;+ CreateOrEdit(AppUserDto): AppUserDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ Get(AppUserPagedInput): AppUserDto&lt;br/&gt;+ List(AppUserPagedInput): PagedResult&amp;lt;AppUserDto&amp;gt;&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ SignIn(AppUserDto, HttpServletRequest): ResponseData&amp;lt;String&amp;gt;&lt;br/&gt;+ ForgetPassword(AppUserDto): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1191" y="176" width="424" height="279" as="geometry" />
+    </mxCell>
+    <mxCell id="node40" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AppUserDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getName(): String&lt;br/&gt;+ getPassword(): String&lt;br/&gt;+ getUserName(): String&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setBirth(LocalDateTime): void&lt;br/&gt;+ setPassword(String): void&lt;br/&gt;+ getOrginPassword(): String&lt;br/&gt;+ getEmail(): String&lt;br/&gt;+ getImageUrls(): String&lt;br/&gt;+ setPhoneNumber(String): void&lt;br/&gt;+ setOrginPassword(String): void&lt;br/&gt;+ setRoleType(Integer): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ getPhoneNumber(): String&lt;br/&gt;+ setImageUrls(String): void&lt;br/&gt;+ getBirth(): LocalDateTime&lt;br/&gt;+ getRoleType(): Integer&lt;br/&gt;+ setUserName(String): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ setEmail(String): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ MapToEntity(): AppUser&lt;br/&gt;+ RoleTypeFormat(): String&lt;br/&gt;+ getSalt(): String&lt;br/&gt;+ setSalt(String): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="190" y="4524" width="227" height="663" as="geometry" />
+    </mxCell>
+    <mxCell id="node35" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;AppUserMapper&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="297" y="-459" width="172" height="35" as="geometry" />
+    </mxCell>
+    <mxCell id="node32" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AppUserPagedInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getRoleType(): Integer&lt;br/&gt;+ getId(): Integer&lt;br/&gt;+ getName(): String&lt;br/&gt;+ getEmail(): String&lt;br/&gt;+ getPhoneNumber(): String&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ setEmail(String): void&lt;br/&gt;+ setPhoneNumber(String): void&lt;br/&gt;+ setRoleType(Integer): void&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ equals(Object): boolean&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="572" y="2688" width="222" height="375" as="geometry" />
+    </mxCell>
+    <mxCell id="node36" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;AppUserService&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ Register(AppUserDto): AppUserDto&lt;br/&gt;+ ForgetPassword(AppUserDto): void&lt;br/&gt;+ Get(AppUserPagedInput): AppUserDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ SignIn(AppUserDto): String&lt;br/&gt;+ Export(String, HttpServletResponse): void&lt;br/&gt;+ CreateOrEdit(AppUserDto): AppUserDto&lt;br/&gt;+ List(AppUserPagedInput): PagedResult&amp;lt;AppUserDto&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="343" y="1628" width="361" height="255" as="geometry" />
+    </mxCell>
+    <mxCell id="node51" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AppUserServiceImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ SignIn(AppUserDto): String&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ Get(AppUserPagedInput): AppUserDto&lt;br/&gt;+ Register(AppUserDto): AppUserDto&lt;br/&gt;+ Export(String, HttpServletResponse): void&lt;br/&gt;+ List(AppUserPagedInput): PagedResult&amp;lt;AppUserDto&amp;gt;&lt;br/&gt;+ ForgetPassword(AppUserDto): void&lt;br/&gt;+ CreateOrEdit(AppUserDto): AppUserDto&lt;br/&gt;+ Delete(IdInput): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-177" y="2148" width="361" height="255" as="geometry" />
+    </mxCell>
+    <mxCell id="node47" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BaseContext&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ setCurrentUserDto(CurrentUserDto): void&lt;br/&gt;+ getApplicationContext(): ApplicationContext&lt;br/&gt;+ setApplicationContext(ApplicationContext): void&lt;br/&gt;+ getCurrentUserDto(): CurrentUserDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="302" y="-192" width="322" height="146" as="geometry" />
+    </mxCell>
+    <mxCell id="node7" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BaseDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getCreationTime(): LocalDateTime&lt;br/&gt;+ getId(): Integer&lt;br/&gt;+ getCreatorId(): Integer&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ getCreatorAppUserDto(): AppUserDto&lt;br/&gt;+ setBehavior(String): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ getBehavior(): String&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ setCreationTime(LocalDateTime): void&lt;br/&gt;+ setCreatorId(Integer): void&lt;br/&gt;+ setCreatorAppUserDto(AppUserDto): void&lt;br/&gt;+ IsEdit(): Boolean&lt;br/&gt;+ IsAdd(): Boolean&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-123" y="3944" width="292" height="423" as="geometry" />
+    </mxCell>
+    <mxCell id="node29" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BaseEntity&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getCreatorId(): Integer&lt;br/&gt;+ getId(): Integer&lt;br/&gt;+ getCreationTime(): LocalDateTime&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ setCreationTime(LocalDateTime): void&lt;br/&gt;+ setCreatorId(Integer): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1350" y="2136" width="266" height="279" as="geometry" />
+    </mxCell>
+    <mxCell id="node69" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cargo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getRating(): String&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ getCustomerId(): Integer&lt;br/&gt;+ getName(): String&lt;br/&gt;+ setManufactureCost(String): void&lt;br/&gt;+ setUnitOfMeasure(Integer): void&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;br/&gt;+ getPrice(): String&lt;br/&gt;+ getManufactureCost(): String&lt;br/&gt;+ setRating(String): void&lt;br/&gt;+ getPartNumber(): String&lt;br/&gt;+ getUnitOfMeasure(): Integer&lt;br/&gt;+ setPrice(String): void&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setPartNumber(String): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setCustomerId(Integer): void&lt;br/&gt;+ MapToDto(): CargoDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="85" y="3284" width="237" height="543" as="geometry" />
+    </mxCell>
+    <mxCell id="node65" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ CreateOrEdit(CargoDto): CargoDto&lt;br/&gt;+ List(CargoPagedInput): PagedResult&amp;lt;CargoDto&amp;gt;&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ Get(CargoPagedInput): CargoDto&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-302" y="-24" width="331" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node57" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getName(): String&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ getCustomerId(): Integer&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ getWarehouseDto(): WarehouseDto&lt;br/&gt;+ getPrice(): String&lt;br/&gt;+ getManufactureCost(): String&lt;br/&gt;+ setRating(String): void&lt;br/&gt;+ getRating(): String&lt;br/&gt;+ setUnitOfMeasure(Integer): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ getPartNumber(): String&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ setManufactureCost(String): void&lt;br/&gt;+ setCargoTypeDto(CargoTypeDto): void&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setCustomerId(Integer): void&lt;br/&gt;+ getUnitOfMeasure(): Integer&lt;br/&gt;+ getCargoTypeDto(): CargoTypeDto&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ setWarehouseDto(WarehouseDto): void&lt;br/&gt;+ setPartNumber(String): void&lt;br/&gt;+ setCustomerDto(CustomerDto): void&lt;br/&gt;+ setPrice(String): void&lt;br/&gt;+ getCustomerDto(): CustomerDto&lt;br/&gt;+ MapToEntity(): Cargo&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="604" y="5212" width="278" height="687" as="geometry" />
+    </mxCell>
+    <mxCell id="node56" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CargoMapper&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="67" y="-459" width="152" height="35" as="geometry" />
+    </mxCell>
+    <mxCell id="node52" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoPagedInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getName(): String&lt;br/&gt;+ getId(): Integer&lt;br/&gt;+ setRating(String): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ getPrice(): String&lt;br/&gt;+ setPartNumber(String): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setPrice(String): void&lt;br/&gt;+ setManufactureCost(String): void&lt;br/&gt;+ getManufactureCost(): String&lt;br/&gt;+ setCustomerId(Integer): void&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ getRating(): String&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ getPartNumber(): String&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ getCustomerId(): Integer&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ setUnitOfMeasure(Integer): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ getUnitOfMeasure(): Integer&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1065" y="1992" width="237" height="567" as="geometry" />
+    </mxCell>
+    <mxCell id="node38" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoReplenishmentDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ setCustomerId(Integer): void&lt;br/&gt;+ getCustomerId(): Integer&lt;br/&gt;+ getCargoId(): Integer&lt;br/&gt;+ getCurrentQty(): Double&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ getNeedQty(): Double&lt;br/&gt;+ getCustomerDto(): CustomerDto&lt;br/&gt;+ getCargoDto(): CargoDto&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ setCargoId(Integer): void&lt;br/&gt;+ setCargoDto(CargoDto): void&lt;br/&gt;+ setCurrentQty(Double): void&lt;br/&gt;+ setCustomerDto(CustomerDto): void&lt;br/&gt;+ setNeedQty(Double): void&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="534" y="3944" width="258" height="423" as="geometry" />
+    </mxCell>
+    <mxCell id="node24" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CargoService&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ CreateOrEdit(CargoDto): CargoDto&lt;br/&gt;+ Get(CargoPagedInput): CargoDto&lt;br/&gt;+ List(CargoPagedInput): PagedResult&amp;lt;CargoDto&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="578" y="556" width="331" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node31" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoServiceImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- DispatchItem(CargoDto): CargoDto&lt;br/&gt;+ List(CargoPagedInput): PagedResult&amp;lt;CargoDto&amp;gt;&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;- BuilderQuery(CargoPagedInput): LambdaQueryWrapper&amp;lt;Cargo&amp;gt;&lt;br/&gt;+ CreateOrEdit(CargoDto): CargoDto&lt;br/&gt;+ Get(CargoPagedInput): CargoDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-311" y="1072" width="429" height="207" as="geometry" />
+    </mxCell>
+    <mxCell id="node6" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoType&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getName(): String&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;br/&gt;+ MapToDto(): CargoTypeDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1431" y="4028" width="224" height="255" as="geometry" />
+    </mxCell>
+    <mxCell id="node62" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoTypeController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ List(CargoTypePagedInput): PagedResult&amp;lt;CargoTypeDto&amp;gt;&lt;br/&gt;+ Get(CargoTypePagedInput): CargoTypeDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ CreateOrEdit(CargoTypeDto): CargoTypeDto&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="30" y="556" width="387" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node61" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoTypeDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getName(): String&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ getWarehouseDto(): WarehouseDto&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ setWarehouseDto(WarehouseDto): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;br/&gt;+ MapToEntity(): CargoType&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-316" y="5404" width="278" height="303" as="geometry" />
+    </mxCell>
+    <mxCell id="node60" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CargoTypeMapper&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-311" y="-319" width="188" height="35" as="geometry" />
+    </mxCell>
+    <mxCell id="node33" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoTypePagedInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getName(): String&lt;br/&gt;+ getId(): Integer&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="711" y="2136" width="224" height="279" as="geometry" />
+    </mxCell>
+    <mxCell id="node15" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CargoTypeService&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ CreateOrEdit(CargoTypeDto): CargoTypeDto&lt;br/&gt;+ Get(CargoTypePagedInput): CargoTypeDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ List(CargoTypePagedInput): PagedResult&amp;lt;CargoTypeDto&amp;gt;&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1110" y="896" width="387" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node54" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CargoTypeServiceImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Get(CargoTypePagedInput): CargoTypeDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ List(CargoTypePagedInput): PagedResult&amp;lt;CargoTypeDto&amp;gt;&lt;br/&gt;+ CreateOrEdit(CargoTypeDto): CargoTypeDto&lt;br/&gt;- BuilderQuery(CargoTypePagedInput): LambdaQueryWrapper&amp;lt;CargoType&amp;gt;&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;- DispatchItem(CargoTypeDto): CargoTypeDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1061" y="1372" width="485" height="207" as="geometry" />
+    </mxCell>
+    <mxCell id="node18" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CurrentUserDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getUserId(): Integer&lt;br/&gt;+ getRoleType(): RoleTypeEnum&lt;br/&gt;+ setUserId(Integer): void&lt;br/&gt;+ setRoleType(RoleTypeEnum): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="821" y="200" width="244" height="231" as="geometry" />
+    </mxCell>
+    <mxCell id="node37" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CurrentUserInterceptor&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ preHandle(HttpServletRequest, HttpServletResponse, Object): boolean&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="256" y="284" width="455" height="68" as="geometry" />
+    </mxCell>
+    <mxCell id="node39" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CustomException&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ setErrorCode(Integer): void&lt;br/&gt;+ setErrorMsg(String): void&lt;br/&gt;+ getErrorCode(): Integer&lt;br/&gt;+ getErrorMsg(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="160" y="-372" width="207" height="146" as="geometry" />
+    </mxCell>
+    <mxCell id="node44" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Customer&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getHairColor(): String&lt;br/&gt;+ getOwnerName(): String&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ getEyeColor(): String&lt;br/&gt;+ getHeight(): String&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ getNationality(): String&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ setOwnerName(String): void&lt;br/&gt;+ setEyeColor(String): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ toString(): String&lt;br/&gt;+ setHairColor(String): void&lt;br/&gt;+ setHeight(String): void&lt;br/&gt;+ setNationality(String): void&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ MapToDto(): CustomerDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1291" y="3332" width="224" height="447" as="geometry" />
+    </mxCell>
+    <mxCell id="node10" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CustomerController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ List(CustomerPagedInput): PagedResult&amp;lt;CustomerDto&amp;gt;&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ Get(CustomerPagedInput): CustomerDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ CreateOrEdit(CustomerDto): CustomerDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="978" y="556" width="371" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node19" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CustomerDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getOwnerName(): String&lt;br/&gt;+ getEyeColor(): String&lt;br/&gt;+ getHairColor(): String&lt;br/&gt;+ getHeight(): String&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ setHeight(String): void&lt;br/&gt;+ setWarehouseDto(WarehouseDto): void&lt;br/&gt;+ getNationality(): String&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ getWarehouseDto(): WarehouseDto&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setNationality(String): void&lt;br/&gt;+ setOwnerName(String): void&lt;br/&gt;+ setEyeColor(String): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ setHairColor(String): void&lt;br/&gt;+ MapToEntity(): Customer&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-156" y="4608" width="278" height="495" as="geometry" />
+    </mxCell>
+    <mxCell id="node58" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CustomerMapper&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-66" y="-319" width="179" height="35" as="geometry" />
+    </mxCell>
+    <mxCell id="node12" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CustomerPagedInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getOwnerName(): String&lt;br/&gt;+ toString(): String&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ getId(): Integer&lt;br/&gt;+ getEyeColor(): String&lt;br/&gt;+ getHairColor(): String&lt;br/&gt;+ getHeight(): String&lt;br/&gt;+ getNationality(): String&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ setEyeColor(String): void&lt;br/&gt;+ setHeight(String): void&lt;br/&gt;+ setOwnerName(String): void&lt;br/&gt;+ setNationality(String): void&lt;br/&gt;+ setHairColor(String): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="91" y="2640" width="224" height="471" as="geometry" />
+    </mxCell>
+    <mxCell id="node20" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CustomerService&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ List(CustomerPagedInput): PagedResult&amp;lt;CustomerDto&amp;gt;&lt;br/&gt;+ CreateOrEdit(CustomerDto): CustomerDto&lt;br/&gt;+ Get(CustomerPagedInput): CustomerDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="598" y="896" width="371" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node16" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CustomerServiceImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ List(CustomerPagedInput): PagedResult&amp;lt;CustomerDto&amp;gt;&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ CreateOrEdit(CustomerDto): CustomerDto&lt;br/&gt;- DispatchItem(CustomerDto): CustomerDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ Get(CustomerPagedInput): CustomerDto&lt;br/&gt;- BuilderQuery(CustomerPagedInput): LambdaQueryWrapper&amp;lt;Customer&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="549" y="1372" width="469" height="207" as="geometry" />
+    </mxCell>
+    <mxCell id="node22" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;EmergencyRankEnum&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ index(): int&lt;br/&gt;+ valueOf(String): EmergencyRankEnum&lt;br/&gt;+ values(): EmergencyRankEnum[]&lt;br/&gt;+ GetEnum(Integer): EmergencyRankEnum&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="423" y="1108" width="281" height="169" as="geometry" />
+    </mxCell>
+    <mxCell id="node3" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Extension&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ PagedResultBuild(List&amp;lt;T&amp;gt;, PagedInput): PagedResult&lt;br/&gt;+ GetWeek(LocalDate): String&lt;br/&gt;+ ToFixed2(double): double&lt;br/&gt;+ LocalDateTimeConvertString(LocalDateTime, String): String&lt;br/&gt;+ isNullOrZero(Integer): boolean&lt;br/&gt;+ copyBeanList(List&amp;lt;?&amp;gt;, Class&amp;lt;T&amp;gt;): List&amp;lt;T&amp;gt;&lt;br/&gt;+ ToFixed4(double): double&lt;br/&gt;+ isNullOrEmpty(String): boolean&lt;br/&gt;+ ToFixed0(double): double&lt;br/&gt;+ GenerateOrderNumber(): String&lt;br/&gt;+ getTokenInfo(String, String): String&lt;br/&gt;+ isNotNullOrEmpty(String): boolean&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1230" y="5392" width="386" height="327" as="geometry" />
+    </mxCell>
+    <mxCell id="node4" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FileController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ uploadFile(MultipartFile[], HttpServletRequest): ArrayList&amp;lt;FileResultDto&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1331" y="1144" width="465" height="68" as="geometry" />
+    </mxCell>
+    <mxCell id="node42" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FileResultDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getUrl(): String&lt;br/&gt;+ getFileName(): String&lt;br/&gt;+ setUrl(String): void&lt;br/&gt;+ setFileName(String): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="243" y="4040" width="200" height="231" as="geometry" />
+    </mxCell>
+    <mxCell id="node53" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GlobalExceptionHandler&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ exceptionHandler(Exception): ResponseData&lt;br/&gt;+ bizExceptionHandler(CustomException): ResponseData&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="81" y="12" width="365" height="94" as="geometry" />
+    </mxCell>
+    <mxCell id="node5" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GlobalResponseAdvice&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ beforeBodyWrite(Object, MethodParameter, MediaType, Class&amp;lt;HttpMessageConverter&amp;lt;?&amp;gt;&amp;gt;, ServerHttpRequest, ServerHttpResponse): Object?&lt;br/&gt;+ supports(MethodParameter, Class&amp;lt;HttpMessageConverter&amp;lt;?&amp;gt;&amp;gt;): boolean&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="802" y="1132" width="482" height="94" as="geometry" />
+    </mxCell>
+    <mxCell id="node34" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;HttpUtils&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Get(String, Map&amp;lt;String, String&amp;gt;): String?&lt;br/&gt;+ Post(String, Object, Map&amp;lt;String, String&amp;gt;): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="660" y="-168" width="327" height="94" as="geometry" />
+    </mxCell>
+    <mxCell id="node14" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;IdInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getId(): Integer&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="483" y="4764" width="200" height="183" as="geometry" />
+    </mxCell>
+    <mxCell id="node45" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;IdsInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getIds(): ArrayList&amp;lt;Integer&amp;gt;&lt;br/&gt;+ setIds(ArrayList&amp;lt;Integer&amp;gt;): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-313" y="2784" width="232" height="183" as="geometry" />
+    </mxCell>
+    <mxCell id="node11" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;InterceptorConfig&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ addInterceptors(InterceptorRegistry): void&lt;br/&gt;+ addCorsMappings(CorsRegistry): void&lt;br/&gt;+ addResourceHandlers(ResourceHandlerRegistry): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1182" y="0" width="363" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="node43" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;JWTUtils&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ verifyToken(String): DecodedJWT&lt;br/&gt;+ getTokenInfo(String): DecodedJWT&lt;br/&gt;+ getToken(Map&amp;lt;String, String&amp;gt;): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="508" y="0" width="271" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="node21" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MyMetaObjectHandler&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ updateFill(MetaObject): void&lt;br/&gt;+ insertFill(MetaObject): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="593" y="-488" width="220" height="94" as="geometry" />
+    </mxCell>
+    <mxCell id="node63" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MybatisPlusConfig&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ mybatisPlusInterceptor(): MybatisPlusInterceptor&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-101" y="-156" width="329" height="68" as="geometry" />
+    </mxCell>
+    <mxCell id="node26" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PagedInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getCreatorId(): Long&lt;br/&gt;+ getLimit(): Long&lt;br/&gt;+ getPage(): Long&lt;br/&gt;+ setCreatorId(Long): void&lt;br/&gt;+ setLimit(Long): void&lt;br/&gt;+ setPage(Long): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="943" y="1616" width="200" height="279" as="geometry" />
+    </mxCell>
+    <mxCell id="node1" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PagedResult&lt;T&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ GetInstance(List, Long): PagedResult&lt;br/&gt;+ getTotalCount(): Long&lt;br/&gt;+ getItems(): List&amp;lt;T&amp;gt;&lt;br/&gt;+ setTotalCount(Long): void&lt;br/&gt;+ setItems(List&amp;lt;T&amp;gt;): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;br/&gt;+ GetEmptyInstance(): PagedResult&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1535" y="1616" width="257" height="279" as="geometry" />
+    </mxCell>
+    <mxCell id="node23" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ResponseData&lt;T&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ setSuccess(Boolean): void&lt;br/&gt;+ getMsg(): String&lt;br/&gt;+ getData(): T&lt;br/&gt;+ getCode(): String&lt;br/&gt;+ getSuccess(): Boolean&lt;br/&gt;+ setMsg(String): void&lt;br/&gt;+ setData(T): void&lt;br/&gt;+ setCode(String): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ toString(): String&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ GetResponseDataInstance(Object, String, Boolean): ResponseData&lt;br/&gt;+ OfSuccess(): ResponseData&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="227" y="2088" width="432" height="375" as="geometry" />
+    </mxCell>
+    <mxCell id="node30" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;RoleTypeEnum&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ values(): RoleTypeEnum[]&lt;br/&gt;+ GetEnum(Integer): RoleTypeEnum&lt;br/&gt;+ index(): int&lt;br/&gt;+ toString(): String&lt;br/&gt;+ valueOf(String): RoleTypeEnum&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="882" y="-24" width="242" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node28" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SelectController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ RoleType(): PagedResult&amp;lt;SelectResult&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1026" y="-156" width="275" height="68" as="geometry" />
+    </mxCell>
+    <mxCell id="node67" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SelectResult&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ setCode(String): void&lt;br/&gt;+ getName(): String&lt;br/&gt;+ getLabel(): String&lt;br/&gt;+ getCode(): String&lt;br/&gt;+ toString(): String&lt;br/&gt;+ getProp(): Object&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setLabel(String): void&lt;br/&gt;+ setProp(Object): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-317" y="472" width="200" height="327" as="geometry" />
+    </mxCell>
+    <mxCell id="node13" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SysConst&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="785" y="-319" width="116" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="node0" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Warehouse&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getArea(): Double&lt;br/&gt;+ getName(): String&lt;br/&gt;+ setEmployeesCount(String): void&lt;br/&gt;+ getAddress(): String&lt;br/&gt;+ getCity(): String&lt;br/&gt;+ getCountry(): String&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ getAnnualTurnover(): String&lt;br/&gt;+ setCity(String): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ getType(): String&lt;br/&gt;+ setCountry(String): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ getRating(): String&lt;br/&gt;+ setRating(String): void&lt;br/&gt;+ getEmployeesCount(): String&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setArea(Double): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ setType(String): void&lt;br/&gt;+ setAnnualTurnover(String): void&lt;br/&gt;+ setAddress(String): void&lt;br/&gt;+ MapToDto(): WarehouseDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1566" y="3260" width="235" height="591" as="geometry" />
+    </mxCell>
+    <mxCell id="node66" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ List(WarehousePagedInput): PagedResult&amp;lt;WarehouseDto&amp;gt;&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ CreateOrEdit(WarehouseDto): WarehouseDto&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ Get(WarehousePagedInput): WarehouseDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-192" y="236" width="391" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node50" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getCountry(): String&lt;br/&gt;+ getName(): String&lt;br/&gt;+ getAddress(): String&lt;br/&gt;+ getCity(): String&lt;br/&gt;+ setAddress(String): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ getAnnualTurnover(): String&lt;br/&gt;+ getArea(): Double&lt;br/&gt;+ getType(): String&lt;br/&gt;+ setCity(String): void&lt;br/&gt;+ setType(String): void&lt;br/&gt;+ getRating(): String&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ setAnnualTurnover(String): void&lt;br/&gt;+ setArea(Double): void&lt;br/&gt;+ getEmployeesCount(): String&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setEmployeesCount(String): void&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setRating(String): void&lt;br/&gt;+ setCountry(String): void&lt;br/&gt;+ MapToEntity(): Warehouse&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="326" y="5260" width="235" height="591" as="geometry" />
+    </mxCell>
+    <mxCell id="node8" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;WarehouseMapper&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="868" y="-459" width="190" height="35" as="geometry" />
+    </mxCell>
+    <mxCell id="node64" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehousePagedInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getId(): Integer&lt;br/&gt;+ getName(): String&lt;br/&gt;+ getAddress(): String&lt;br/&gt;+ setAddress(String): void&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ setEmployeesCount(String): void&lt;br/&gt;+ setCity(String): void&lt;br/&gt;+ getCity(): String&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ setRating(String): void&lt;br/&gt;+ getCountry(): String&lt;br/&gt;+ setType(String): void&lt;br/&gt;+ toString(): String&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ setCountry(String): void&lt;br/&gt;+ getAnnualTurnover(): String&lt;br/&gt;+ getType(): String&lt;br/&gt;+ getRating(): String&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ getEmployeesCount(): String&lt;br/&gt;+ setName(String): void&lt;br/&gt;+ setAnnualTurnover(String): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="1206" y="2592" width="235" height="567" as="geometry" />
+    </mxCell>
+    <mxCell id="node49" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseRelativeUser&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getUserId(): Integer&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ setUserId(Integer): void&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;br/&gt;+ MapToDto(): WarehouseRelativeUserDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="361" y="3428" width="284" height="255" as="geometry" />
+    </mxCell>
+    <mxCell id="node68" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseRelativeUserController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Delete(IdInput): void&lt;br/&gt;+ List(WarehouseRelativeUserPagedInput): PagedResult&amp;lt;WarehouseRelativeUserDto&amp;gt;&lt;br/&gt;+ Get(WarehouseRelativeUserPagedInput): WarehouseRelativeUserDto&lt;br/&gt;+ CreateOrEdit(WarehouseRelativeUserDto): WarehouseRelativeUserDto&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-304" y="1676" width="535" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node27" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseRelativeUserDto&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getUserId(): Integer&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ getUserDto(): AppUserDto&lt;br/&gt;+ getWarehouseDto(): WarehouseDto&lt;br/&gt;+ setUserId(Integer): void&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ setUserDto(AppUserDto): void&lt;br/&gt;+ setWarehouseDto(WarehouseDto): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;+ toString(): String&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ MapToEntity(): WarehouseRelativeUser&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="4" y="5380" width="278" height="351" as="geometry" />
+    </mxCell>
+    <mxCell id="node25" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;WarehouseRelativeUserMapper&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="403" y="-319" width="281" height="35" as="geometry" />
+    </mxCell>
+    <mxCell id="node41" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseRelativeUserPagedInput&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getId(): Integer&lt;br/&gt;+ getUserId(): Integer&lt;br/&gt;+ getWarehouseId(): Integer&lt;br/&gt;+ setId(Integer): void&lt;br/&gt;+ setUserId(Integer): void&lt;br/&gt;+ setWarehouseId(Integer): void&lt;br/&gt;+ equals(Object): boolean&lt;br/&gt;# canEqual(Object): boolean&lt;br/&gt;+ hashCode(): int&lt;br/&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="849" y="2736" width="309" height="279" as="geometry" />
+    </mxCell>
+    <mxCell id="node46" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;WarehouseRelativeUserService&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ Delete(IdInput): void&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ List(WarehouseRelativeUserPagedInput): PagedResult&amp;lt;WarehouseRelativeUserDto&amp;gt;&lt;br/&gt;+ CreateOrEdit(WarehouseRelativeUserDto): WarehouseRelativeUserDto&lt;br/&gt;+ Get(WarehouseRelativeUserPagedInput): WarehouseRelativeUserDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="696" y="3476" width="535" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node9" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseRelativeUserServiceImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;- BuilderQuery(WarehouseRelativeUserPagedInput): LambdaQueryWrapper&amp;lt;WarehouseRelativeUser&amp;gt;&lt;br/&gt;+ Get(WarehouseRelativeUserPagedInput): WarehouseRelativeUserDto&lt;br/&gt;+ CreateOrEdit(WarehouseRelativeUserDto): WarehouseRelativeUserDto&lt;br/&gt;- DispatchItem(WarehouseRelativeUserDto): WarehouseRelativeUserDto&lt;br/&gt;+ List(WarehouseRelativeUserPagedInput): PagedResult&amp;lt;WarehouseRelativeUserDto&amp;gt;&lt;br/&gt;+ Delete(IdInput): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="767" y="4752" width="633" height="207" as="geometry" />
+    </mxCell>
+    <mxCell id="node17" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;WarehouseService&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ CreateOrEdit(WarehouseDto): WarehouseDto&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ List(WarehousePagedInput): PagedResult&amp;lt;WarehouseDto&amp;gt;&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;+ Get(WarehousePagedInput): WarehouseDto&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="148" y="896" width="391" height="159" as="geometry" />
+    </mxCell>
+    <mxCell id="node55" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WarehouseServiceImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ CreateOrEdit(WarehouseDto): WarehouseDto&lt;br/&gt;+ Get(WarehousePagedInput): WarehouseDto&lt;br/&gt;+ BatchDelete(IdsInput): void&lt;br/&gt;+ List(WarehousePagedInput): PagedResult&amp;lt;WarehouseDto&amp;gt;&lt;br/&gt;+ Delete(IdInput): void&lt;br/&gt;- DispatchItem(WarehouseDto): WarehouseDto&lt;br/&gt;- BuilderQuery(WarehousePagedInput): LambdaQueryWrapper&amp;lt;Warehouse&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="19" y="1372" width="489" height="207" as="geometry" />
+    </mxCell>
+    <mxCell id="node59" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WebApplication&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ main(String[]): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-182" y="-476" width="170" height="68" as="geometry" />
+    </mxCell>
+    <mxCell id="edge19" edge="1" value="" parent="1" source="node48" target="node29" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1263" y="3235" />
+          <mxPoint x="1403" y="3235" />
+          <mxPoint x="1403" y="3175" />
+          <mxPoint x="1483" y="3175" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge4" edge="1" value="" parent="1" source="node40" target="node7" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="303" y="4495" />
+          <mxPoint x="143" y="4495" />
+          <mxPoint x="143" y="4395" />
+          <mxPoint x="23" y="4395" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge10" edge="1" value="" parent="1" source="node32" target="node26" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="683" y="1955" />
+          <mxPoint x="1043" y="1955" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge17" edge="1" value="" parent="1" source="node51" target="node36" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=block;endSize=12;strokeColor=#008200;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="3" y="1935" />
+          <mxPoint x="523" y="1935" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge11" edge="1" value="" parent="1" source="node69" target="node29" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="203" y="3235" />
+          <mxPoint x="1403" y="3235" />
+          <mxPoint x="1403" y="3175" />
+          <mxPoint x="1483" y="3175" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge2" edge="1" value="" parent="1" source="node57" target="node7" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="743" y="4495" />
+          <mxPoint x="143" y="4495" />
+          <mxPoint x="143" y="4395" />
+          <mxPoint x="23" y="4395" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge6" edge="1" value="" parent="1" source="node52" target="node26" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1183" y="1955" />
+          <mxPoint x="1043" y="1955" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge3" edge="1" value="" parent="1" source="node31" target="node24" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=block;endSize=12;strokeColor=#008200;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="-97" y="875" />
+          <mxPoint x="743" y="875" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge13" edge="1" value="" parent="1" source="node6" target="node29" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1543" y="3235" />
+          <mxPoint x="1403" y="3235" />
+          <mxPoint x="1403" y="3175" />
+          <mxPoint x="1483" y="3175" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge0" edge="1" value="" parent="1" source="node61" target="node7" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="-177" y="4495" />
+          <mxPoint x="143" y="4495" />
+          <mxPoint x="143" y="4395" />
+          <mxPoint x="23" y="4395" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge1" edge="1" value="" parent="1" source="node33" target="node26" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="823" y="1955" />
+          <mxPoint x="1043" y="1955" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge5" edge="1" value="" parent="1" source="node54" target="node15" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=block;endSize=12;strokeColor=#008200;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge8" edge="1" value="" parent="1" source="node44" target="node29" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1403" y="3175" />
+          <mxPoint x="1483" y="3175" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge20" edge="1" value="" parent="1" source="node19" target="node7" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="-17" y="4495" />
+          <mxPoint x="143" y="4495" />
+          <mxPoint x="143" y="4395" />
+          <mxPoint x="23" y="4395" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge9" edge="1" value="" parent="1" source="node12" target="node26" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="203" y="1955" />
+          <mxPoint x="1043" y="1955" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge15" edge="1" value="" parent="1" source="node16" target="node20" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=block;endSize=12;strokeColor=#008200;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge16" edge="1" value="" parent="1" source="node0" target="node29" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1683" y="3235" />
+          <mxPoint x="1403" y="3235" />
+          <mxPoint x="1403" y="3175" />
+          <mxPoint x="1483" y="3175" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge23" edge="1" value="" parent="1" source="node50" target="node7" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="443" y="4495" />
+          <mxPoint x="143" y="4495" />
+          <mxPoint x="143" y="4395" />
+          <mxPoint x="23" y="4395" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge21" edge="1" value="" parent="1" source="node64" target="node26" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1323" y="1955" />
+          <mxPoint x="1043" y="1955" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge22" edge="1" value="" parent="1" source="node49" target="node29" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="503" y="3235" />
+          <mxPoint x="1403" y="3235" />
+          <mxPoint x="1403" y="3175" />
+          <mxPoint x="1483" y="3175" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge14" edge="1" value="" parent="1" source="node27" target="node7" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="143" y="4395" />
+          <mxPoint x="23" y="4395" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge18" edge="1" value="" parent="1" source="node41" target="node26" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#000082;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1003" y="1955" />
+          <mxPoint x="1043" y="1955" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge7" edge="1" value="" parent="1" source="node9" target="node46" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=block;endSize=12;strokeColor=#008200;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1083" y="4715" />
+          <mxPoint x="963" y="4715" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge12" edge="1" value="" parent="1" source="node55" target="node17" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=block;endSize=12;strokeColor=#008200;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="263" y="1335" />
+          <mxPoint x="343" y="1335" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>
