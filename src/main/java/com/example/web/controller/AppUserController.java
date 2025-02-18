@@ -2,8 +2,12 @@ package com.example.web.controller;
 
 import com.example.web.dto.AppUserDto;
 import com.example.web.dto.query.AppUserPagedInput;
+import com.example.web.entity.AppUser;
+import com.example.web.entity.ImportHistory;
+import com.example.web.mapper.ImportHistoryMapper;
 import com.example.web.service.AppUserService;
 import com.example.web.tools.BaseContext;
+import com.example.web.tools.ExcelUtils;
 import com.example.web.tools.dto.IdInput;
 import com.example.web.tools.dto.IdsInput;
 import com.example.web.tools.dto.PagedResult;
@@ -12,9 +16,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
@@ -24,7 +33,10 @@ import java.io.IOException;
 @RequestMapping("/User")
 public class AppUserController {
     @Autowired()
-    private  AppUserService AppUserService;
+    private AppUserService AppUserService;
+    @Autowired()
+    private ImportHistoryMapper ImportHistoryMapper;
+
 
 
     /**
@@ -42,17 +54,17 @@ public class AppUserController {
     /**
      * 用户创建或则修改接口
      */
-   @RequestMapping(value = "/CreateOrEdit", method = RequestMethod.POST)
-    public AppUserDto CreateOrEdit(@RequestBody AppUserDto input)  {
+    @RequestMapping(value = "/CreateOrEdit", method = RequestMethod.POST)
+    public AppUserDto CreateOrEdit(@RequestBody AppUserDto input) {
         return AppUserService.CreateOrEdit(input);
 
     }
+
     /**
      * 用户删除
      */
     @RequestMapping(value = "/Delete", method = RequestMethod.POST)
-    public void Delete(@RequestBody IdInput input)
-    {
+    public void Delete(@RequestBody IdInput input) {
         AppUserService.Delete(input);
     }
 
@@ -60,8 +72,7 @@ public class AppUserController {
      * 用户批量删除
      */
     @RequestMapping(value = "/BatchDelete", method = RequestMethod.POST)
-    public void BatchDelete(@RequestBody IdsInput input)
-    {
+    public void BatchDelete(@RequestBody IdsInput input) {
         AppUserService.BatchDelete(input);
     }
 
@@ -70,8 +81,7 @@ public class AppUserController {
      * 查询单个对用户
      */
     @RequestMapping(value = "/Get", method = RequestMethod.POST)
-    public AppUserDto Get(@RequestBody AppUserPagedInput input)
-    {
+    public AppUserDto Get(@RequestBody AppUserPagedInput input) {
         return AppUserService.Get(input);
     }
 
@@ -79,10 +89,9 @@ public class AppUserController {
      * 用户登录
      */
     @RequestMapping(value = "/SignIn", method = RequestMethod.POST)
-    public ResponseData<String> SignIn(@RequestBody AppUserDto input, HttpServletRequest request)
-    {
-        String token= AppUserService.SignIn(input);
-        return ResponseData.GetResponseDataInstance(token,"Login successful",true);
+    public ResponseData<String> SignIn(@RequestBody AppUserDto input, HttpServletRequest request) {
+        String token = AppUserService.SignIn(input);
+        return ResponseData.GetResponseDataInstance(token, "Login successful", true);
     }
 
     /**
@@ -90,12 +99,12 @@ public class AppUserController {
      */
     @SneakyThrows
     @RequestMapping(value = "/GetByToken", method = RequestMethod.POST)
-    public AppUserDto GetByToken(@RequestHeader("Authorization") String token){
+    public AppUserDto GetByToken(@RequestHeader("Authorization") String token) {
 
-        Integer userId= BaseContext.getCurrentUserDto().getUserId();
-        AppUserPagedInput queryInput=new AppUserPagedInput();
+        Integer userId = BaseContext.getCurrentUserDto().getUserId();
+        AppUserPagedInput queryInput = new AppUserPagedInput();
         queryInput.setId(userId);
-        AppUserDto AppUserDto=AppUserService.Get(queryInput);
+        AppUserDto AppUserDto = AppUserService.Get(queryInput);
 
         return AppUserDto;
     }
@@ -109,18 +118,24 @@ public class AppUserController {
         return AppUserService.Register(input);
 
     }
-  /**
-     * 找回密码
-     */
-    @RequestMapping(value = "/ForgetPassword", method = RequestMethod.POST)
-    public void ForgetPassword(@RequestBody AppUserDto input) throws Exception {
-        AppUserService.ForgetPassword(input);
-    }
+
     /**
      * 用户导出
      */
     @RequestMapping(value = "/Export", method = RequestMethod.GET)
     public void Export(@RequestParam String query, HttpServletResponse response) throws IOException {
-        AppUserService.Export(query,response);
+        AppUserService.Export(query, response);
     }
+
+    @PostMapping("/import")
+    public void importExcel(MultipartFile file)throws IOException{
+        AppUserService.importExcel(file);
+
+    }
+    @GetMapping("/importHistory")
+    public List<ImportHistory> getImportHistory() {
+        return ImportHistoryMapper.getImportHistory();
+    }
+
 }
+
