@@ -1,6 +1,6 @@
 package com.example.web.service.impl;
 
-import com.alibaba.excel.EasyExcel;
+
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -10,11 +10,9 @@ import com.example.web.SysConst;
 import com.example.web.dto.AppUserDto;
 import com.example.web.dto.query.AppUserPagedInput;
 import com.example.web.entity.AppUser;
-import com.example.web.entity.ImportHistory;
 import com.example.web.entity.WarehouseRelativeUser;
 import com.example.web.enums.RoleTypeEnum;
 import com.example.web.mapper.AppUserMapper;
-import com.example.web.mapper.ImportHistoryMapper;
 import com.example.web.mapper.WarehouseRelativeUserMapper;
 import com.example.web.service.AppUserService;
 import com.example.web.tools.Extension;
@@ -33,7 +31,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.security.crypto.bcrypt.BCrypt;
-import org.springframework.web.multipart.MultipartFile;
+
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -309,24 +307,6 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
         //workbook将Excel写入到response的输出流中，供页面下载
         workbook.write(response.getOutputStream());
     }
-    @Autowired
-    private ImportHistoryMapper importHistoryMapper;
-
-    @Override
-    public void importExcel(MultipartFile file)throws IOException{
-
-        List<AppUser> users = EasyExcel.read(file.getInputStream())
-                .head(AppUser.class)
-                .sheet()
-                .doReadSync();
-        this.saveBatch(users);
-        ImportHistory history = new ImportHistory();
-        history.setFileName(file.getOriginalFilename());
-        history.setStatus("success");
-        importHistoryMapper.insertHistory(history);
-    }
-
-
 
 
 

@@ -1,6 +1,5 @@
 package com.example.web.dto.query;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.example.web.tools.dto.PagedInput;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

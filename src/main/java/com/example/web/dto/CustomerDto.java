@@ -79,6 +79,7 @@ public class CustomerDto extends BaseDto
          BeanUtils.copyProperties(Customer,this);
           }
         catch (Exception e) {
+            System.err.println("异常");
          }
         return Customer;
     }

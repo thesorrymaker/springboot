@@ -100,6 +100,7 @@ public class CargoDto extends BaseDto
          BeanUtils.copyProperties(Cargo,this);
           }
         catch (Exception e) {
+            System.err.println("异常");
          }
         return Cargo;
     }

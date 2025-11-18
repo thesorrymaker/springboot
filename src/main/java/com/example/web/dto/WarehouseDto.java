@@ -97,6 +97,7 @@ public class WarehouseDto extends BaseDto
          BeanUtils.copyProperties(Warehouse,this);
           }
         catch (Exception e) {
+            System.err.println("异常");
          }
         return Warehouse;
     }

@@ -47,7 +47,7 @@ public class WarehouseRelativeUser extends BaseEntity {
          try {
         BeanUtils.copyProperties(WarehouseRelativeUserDto,this);
           }
-        catch (Exception e) {}
+        catch (Exception e) {System.err.println("异常");}
         return WarehouseRelativeUserDto;
     }
 

@@ -9,10 +9,9 @@ import com.example.web.tools.dto.IdsInput;
 import com.example.web.tools.dto.PagedResult;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.List;
+
 
 /**
  * 用户功能的Service接口的定义清单
@@ -61,7 +60,7 @@ public interface AppUserService extends IService<AppUser> {
      * 用户导出
      */
     public void Export(@RequestParam String query, HttpServletResponse response) throws IOException;
-    public void importExcel(MultipartFile file)throws IOException;
+
 
 
 }

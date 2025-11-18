@@ -75,7 +75,7 @@ public class Customer extends BaseEntity {
          try {
         BeanUtils.copyProperties(CustomerDto,this);
           }
-        catch (Exception e) {}
+        catch (Exception e) {System.err.println("异常");}
         return CustomerDto;
     }
 

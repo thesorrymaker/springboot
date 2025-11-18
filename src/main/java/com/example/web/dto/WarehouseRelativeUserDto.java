@@ -54,6 +54,7 @@ public class WarehouseRelativeUserDto extends BaseDto
          BeanUtils.copyProperties(WarehouseRelativeUser,this);
           }
         catch (Exception e) {
+            System.err.println("异常");
          }
         return WarehouseRelativeUser;
     }
