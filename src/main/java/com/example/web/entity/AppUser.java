@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.apache.commons.beanutils.BeanUtils;
 
-import java.lang.reflect.InvocationTargetException;
+
 import java.time.LocalDateTime;
 
 @Data
@@ -66,10 +66,15 @@ public class AppUser extends  BaseEntity {
     /**
      * 把用户实体转换成用户传输模型
      */
-    public AppUserDto MapToDto() throws InvocationTargetException, IllegalAccessException {
-        AppUserDto AppUserDto = new AppUserDto();
-        BeanUtils.copyProperties(AppUserDto,this);
-        return AppUserDto;
+    public AppUserDto MapToDto() {
+        try {
+            AppUserDto appUserDto = new AppUserDto();
+            BeanUtils.copyProperties(appUserDto, this); // 目标, 源
+            return appUserDto;
+        } catch (Exception e) {
+            // 记录日志，但返回空对象避免系统崩溃
+            System.err.println("DTO转换异常: " + e.getMessage());
+            return new AppUserDto();
+        }
     }
-
 }

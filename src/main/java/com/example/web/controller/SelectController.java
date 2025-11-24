@@ -2,14 +2,12 @@ package com.example.web.controller;
 import com.example.web.enums.*;
 import com.example.web.tools.dto.PagedResult;
 import com.example.web.tools.dto.SelectResult;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/Select")

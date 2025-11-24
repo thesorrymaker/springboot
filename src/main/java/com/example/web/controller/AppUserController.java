@@ -2,28 +2,17 @@ package com.example.web.controller;
 
 import com.example.web.dto.AppUserDto;
 import com.example.web.dto.query.AppUserPagedInput;
-import com.example.web.entity.AppUser;
-import com.example.web.entity.ImportHistory;
-import com.example.web.mapper.ImportHistoryMapper;
 import com.example.web.service.AppUserService;
 import com.example.web.tools.BaseContext;
-import com.example.web.tools.ExcelUtils;
 import com.example.web.tools.dto.IdInput;
 import com.example.web.tools.dto.IdsInput;
 import com.example.web.tools.dto.PagedResult;
 import com.example.web.tools.dto.ResponseData;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 
 /**
@@ -34,8 +23,7 @@ import java.util.stream.Collectors;
 public class AppUserController {
     @Autowired()
     private AppUserService AppUserService;
-    @Autowired()
-    private ImportHistoryMapper ImportHistoryMapper;
+
 
 
 
@@ -119,23 +107,12 @@ public class AppUserController {
 
     }
 
-    /**
-     * 用户导出
-     */
-    @RequestMapping(value = "/Export", method = RequestMethod.GET)
-    public void Export(@RequestParam String query, HttpServletResponse response) throws IOException {
-        AppUserService.Export(query, response);
-    }
 
-    @PostMapping("/import")
-    public void importExcel(MultipartFile file)throws IOException{
-        AppUserService.importExcel(file);
+
+
 
     }
-    @GetMapping("/importHistory")
-    public List<ImportHistory> getImportHistory() {
-        return ImportHistoryMapper.getImportHistory();
-    }
 
-}
+
+
 
