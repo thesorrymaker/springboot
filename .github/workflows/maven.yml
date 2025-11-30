@@ -2,9 +2,9 @@ name: Java CI with Security Scans
 
 on:
   push:
-    branches: [ master ]
+    branches: [ refactoring3 ]
   pull_request:
-    branches: [ master ]
+    branches: [ refactoring3 ]
 
 jobs:
   build-and-test:
