@@ -20,7 +20,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build with Maven (lab1 only)
+      - name: Build with Maven 
         working-directory: ./
         run: mvn clean package -DskipTests
 
@@ -30,7 +30,7 @@ jobs:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
 
-      - name: Run SpotBugs (SAST) for islab1
+      - name: Run SpotBugs (SAST) 
         run: mvn spotbugs:spotbugs
 
       - name: Upload SpotBugs report
