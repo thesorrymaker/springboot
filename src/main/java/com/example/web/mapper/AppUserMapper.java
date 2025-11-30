@@ -11,5 +11,5 @@ import java.io.IOException;
  */
 @Mapper
 public interface AppUserMapper  extends BaseMapper<AppUser> {
-    void importExcel(MultipartFile file) throws IOException;
+
 }
