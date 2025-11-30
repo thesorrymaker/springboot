@@ -21,19 +21,12 @@ import com.example.web.tools.dto.IdInput;
 import com.example.web.tools.dto.IdsInput;
 import com.example.web.tools.dto.PagedResult;
 import com.example.web.tools.exception.CustomException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
-import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.ss.usermodel.FillPatternType;
-import org.apache.poi.ss.usermodel.IndexedColors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -160,6 +153,10 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
      * 登录
      */
     public String SignIn(AppUserDto input) {
+        // 参数校验
+        if (input == null || Extension.isNullOrEmpty(input.getUserName()) || Extension.isNullOrEmpty(input.getPassword())) {
+            throw new CustomException("username and password cant be empty");
+        }
         LambdaQueryWrapper<AppUser> queryWrapper = Wrappers.<AppUser>lambdaQuery()
                 .eq(Extension.isNotNullOrEmpty(input.getUserName()), AppUser::getUserName, input.getUserName())
                 .eq(input.getRoleType() != null, AppUser::getRoleType, input.getRoleType());
@@ -167,13 +164,29 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
 
 
         List<AppUser> items = AppUserMpper.selectList(queryWrapper);
+
         if (items.stream().count() == 0) {
-            throw new CustomException("Please check whether the login account or password and role are correct.!");
+            throw new CustomException("Please check whether the login account or password and role are correct!");
         }
         AppUser user=items.get(0);
-        if (!BCrypt.checkpw(input.getPassword(), user.getPassword())) {
-            throw new CustomException("Wrong password, please check and log in again!");
+//        if (!BCrypt.checkpw(input.getPassword(), user.getPassword())) {
+//            throw new CustomException("Wrong password, please check and log in again!");
+//        }
+        // 密码验证（添加异常处理）
+        try {
+            if (!BCrypt.checkpw(input.getPassword(), user.getPassword())) {
+                throw new CustomException("密码错误，请检查后重新登录！");
+            }
+        } catch (IllegalArgumentException e) {
+            // 处理Invalid salt等BCrypt异常
+            throw new CustomException("密码验证失败，请联系管理员");
         }
+
+        // 验证角色类型
+        if (input.getRoleType() != null && !input.getRoleType().equals(user.getRoleType())) {
+            throw new CustomException("角色类型不匹配");
+        }
+
         if(user.getRoleType()== RoleTypeEnum.user.index())
         {
             Long selectCount = WarehouseRelativeUserMapper.selectCount(Wrappers.<WarehouseRelativeUser>lambdaQuery().eq(WarehouseRelativeUser::getUserId, user.getId()));
@@ -222,91 +235,91 @@ public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> impl
     /**
      * 用户导出
      */
-    @Override
-    public void Export(@RequestParam String query, HttpServletResponse response) throws IOException {
-
-        ObjectMapper mapper = new ObjectMapper();
-
-
-        AppUserPagedInput input = mapper.readValue(query, AppUserPagedInput.class);
-
-        List<AppUserDto> items =List(input).getItems();
-
-
-        //声明一个工作簿
-        HSSFWorkbook workbook = new HSSFWorkbook();
-
-        //生成一个表格，设置表格名称为"用户表"
-        HSSFSheet sheet = workbook.createSheet("用户表");
-
-        //设置表格列宽度为10个字节
-        sheet.setDefaultColumnWidth(10);
-        //创建标题的显示样式
-        HSSFCellStyle headerStyle = workbook.createCellStyle();
-        headerStyle.setFillForegroundColor(IndexedColors.YELLOW.index);
-        headerStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-        //创建第一行表头
-        HSSFRow headrow = sheet.createRow(0);
-
-        //表头数据
-        String[] header = {"账户","密码","姓名","邮箱","手机号码","用户角色","出生年月",};
-        //遍历添加表头(下面模拟遍历用户，也是同样的操作过程)
-        for (int i = 0; i < header.length; i++) {
-            //创建一个单元格
-            HSSFCell cell = headrow.createCell(i);
-
-            //创建一个内容对象
-            HSSFRichTextString text = new HSSFRichTextString(header[i]);
-
-            //将内容对象的文字内容写入到单元格中
-            cell.setCellValue(text);
-            cell.setCellStyle(headerStyle);
-        }
-
-
-        for(int i=0;i<items.size();i++){
-
-            AppUserDto appUser = items.get(i);
-
-            //创建一行
-            HSSFRow row = sheet.createRow(i+1);
-
-            if(appUser.getUserName()!=null) {
-                row.createCell(0).setCellValue(new HSSFRichTextString(appUser.getUserName()));
-            }
-            if(appUser.getPassword()!=null) {
-                row.createCell(1).setCellValue(new HSSFRichTextString(appUser.getPassword()));
-            }
-            if(appUser.getName()!=null) {
-                row.createCell(2).setCellValue(new HSSFRichTextString(appUser.getName()));
-            }
-            if(appUser.getEmail()!=null) {
-                row.createCell(3).setCellValue(new HSSFRichTextString(appUser.getEmail()));
-            }
-            if(appUser.getPhoneNumber()!=null) {
-                row.createCell(4).setCellValue(new HSSFRichTextString(appUser.getPhoneNumber()));
-            }
-            if(appUser.getRoleType()!=null) {
-                row.createCell(5).setCellValue(new HSSFRichTextString(appUser.RoleTypeFormat()));
-            }
-            if(appUser.getBirth()!=null) {
-                row.createCell(6).setCellValue(new HSSFRichTextString(Extension.LocalDateTimeConvertString(appUser.getBirth(), null)));
-            }
-        }
-
-        //准备将Excel的输出流通过response输出到页面下载
-        //八进制输出流
-        response.setContentType("application/octet-stream");
-
-        //这后面可以设置导出Excel的名称
-        response.setHeader("Content-disposition", "attachment;filename="+System.currentTimeMillis()+".xls");
-
-        //刷新缓冲
-        response.flushBuffer();
-
-        //workbook将Excel写入到response的输出流中，供页面下载
-        workbook.write(response.getOutputStream());
-    }
+//    @Override
+//    public void Export(@RequestParam String query, HttpServletResponse response) throws IOException {
+//
+//        ObjectMapper mapper = new ObjectMapper();
+//
+//
+//        AppUserPagedInput input = mapper.readValue(query, AppUserPagedInput.class);
+//
+//        List<AppUserDto> items =List(input).getItems();
+//
+//
+//        //声明一个工作簿
+//        HSSFWorkbook workbook = new HSSFWorkbook();
+//
+//        //生成一个表格，设置表格名称为"用户表"
+//        HSSFSheet sheet = workbook.createSheet("用户表");
+//
+//        //设置表格列宽度为10个字节
+//        sheet.setDefaultColumnWidth(10);
+//        //创建标题的显示样式
+//        HSSFCellStyle headerStyle = workbook.createCellStyle();
+//        headerStyle.setFillForegroundColor(IndexedColors.YELLOW.index);
+//        headerStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+//        //创建第一行表头
+//        HSSFRow headrow = sheet.createRow(0);
+//
+//        //表头数据
+//        String[] header = {"账户","密码","姓名","邮箱","手机号码","用户角色","出生年月",};
+//        //遍历添加表头(下面模拟遍历用户，也是同样的操作过程)
+//        for (int i = 0; i < header.length; i++) {
+//            //创建一个单元格
+//            HSSFCell cell = headrow.createCell(i);
+//
+//            //创建一个内容对象
+//            HSSFRichTextString text = new HSSFRichTextString(header[i]);
+//
+//            //将内容对象的文字内容写入到单元格中
+//            cell.setCellValue(text);
+//            cell.setCellStyle(headerStyle);
+//        }
+//
+//
+//        for(int i=0;i<items.size();i++){
+//
+//            AppUserDto appUser = items.get(i);
+//
+//            //创建一行
+//            HSSFRow row = sheet.createRow(i+1);
+//
+//            if(appUser.getUserName()!=null) {
+//                row.createCell(0).setCellValue(new HSSFRichTextString(appUser.getUserName()));
+//            }
+//            if(appUser.getPassword()!=null) {
+//                row.createCell(1).setCellValue(new HSSFRichTextString(appUser.getPassword()));
+//            }
+//            if(appUser.getName()!=null) {
+//                row.createCell(2).setCellValue(new HSSFRichTextString(appUser.getName()));
+//            }
+//            if(appUser.getEmail()!=null) {
+//                row.createCell(3).setCellValue(new HSSFRichTextString(appUser.getEmail()));
+//            }
+//            if(appUser.getPhoneNumber()!=null) {
+//                row.createCell(4).setCellValue(new HSSFRichTextString(appUser.getPhoneNumber()));
+//            }
+//            if(appUser.getRoleType()!=null) {
+//                row.createCell(5).setCellValue(new HSSFRichTextString(appUser.RoleTypeFormat()));
+//            }
+//            if(appUser.getBirth()!=null) {
+//                row.createCell(6).setCellValue(new HSSFRichTextString(Extension.LocalDateTimeConvertString(appUser.getBirth(), null)));
+//            }
+//        }
+//
+//        //准备将Excel的输出流通过response输出到页面下载
+//        //八进制输出流
+//        response.setContentType("application/octet-stream");
+//
+//        //这后面可以设置导出Excel的名称
+//        response.setHeader("Content-disposition", "attachment;filename="+System.currentTimeMillis()+".xls");
+//
+//        //刷新缓冲
+//        response.flushBuffer();
+//
+//        //workbook将Excel写入到response的输出流中，供页面下载
+//        workbook.write(response.getOutputStream());
+//    }
 
 
 

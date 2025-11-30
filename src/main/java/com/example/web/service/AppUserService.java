@@ -7,10 +7,7 @@ import com.example.web.entity.AppUser;
 import com.example.web.tools.dto.IdInput;
 import com.example.web.tools.dto.IdsInput;
 import com.example.web.tools.dto.PagedResult;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.IOException;
 
 
 /**
@@ -59,7 +56,7 @@ public interface AppUserService extends IService<AppUser> {
     /**
      * 用户导出
      */
-    public void Export(@RequestParam String query, HttpServletResponse response) throws IOException;
+//    public void Export(@RequestParam String query, HttpServletResponse response) throws IOException;
 
 
 
